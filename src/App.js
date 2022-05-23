@@ -5,12 +5,14 @@ import { Route, Routes } from 'react-router-dom';
 import Login from './Pages/Login/Login';
 import { Toaster } from 'react-hot-toast';
 import SignUp from './Pages/Login/SignUp';
+import Home from './Pages/Home/Home';
 
 function App() {
   return (
     <div>
       <Navbar></Navbar>
       <Routes>
+        <Route path='/' element={<Home />}></Route>
         <Route path='/login' element={<Login />}></Route>
         <Route path='/signup' element={<SignUp />}></Route>
       </Routes>
