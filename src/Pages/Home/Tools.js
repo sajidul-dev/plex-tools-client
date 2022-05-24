@@ -1,11 +1,10 @@
 import React from 'react';
-import useTools from '../../hooks/useTools';
+import { useQuery } from 'react-query';
 import Loading from '../Shared/Loading';
 import Tool from './Tool';
 
 const Tools = () => {
-    const [tools, isLoading] = useTools()
-
+    const { data: tools, isLoading } = useQuery('tools', () => fetch('http://localhost:5000/tools').then(res => res.json()))
     if (isLoading) {
         return <Loading />
     }

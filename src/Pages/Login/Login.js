@@ -27,7 +27,7 @@ const Login = () => {
             navigate(from, { replace: true });
         }
 
-    }, [from, navigate, googleUser, user])
+    }, [token, from, navigate])
 
     if (loading || googleLoading || sending) {
         return <Loading></Loading>
