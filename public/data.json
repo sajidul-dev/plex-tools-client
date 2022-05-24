@@ -70,5 +70,17 @@
         "quantity": 3000,
         "minimumOrder": 50,
         "description": "The Testo 206-pH2 pH meter allows you to measure the pH value and temperature of semi-solid media safely and reliably. Ideal for laboratories, industrial production processes, and the food industry. "
+    },
+    {
+        "rating": 3,
+        "review": "It's a good company. I am purchasing product from here from last two years. There service quality is too good."
+    },
+    {
+        "rating": 4,
+        "review": "It's a good company. I am purchasing product from here from last two years. There service quality is too good."
+    },
+    {
+        "rating": 5,
+        "review": "It's a good company. I am purchasing product from here from last two years. There service quality is too good."
     }
 ]

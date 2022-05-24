@@ -15,7 +15,14 @@ const Purchase = () => {
     const [quantityError, setQuantityError] = useState('')
 
     useEffect(() => {
-        fetch(`http://localhost:5000/tool/${id}`)
+        fetch(`http://localhost:5000/tool/${id}`, {
+            method: "GET",
+            headers: {
+                "authorization": `Bearer ${localStorage.getItem('accessToken')}`,
+                "content-type": "application/json"
+            },
+
+        })
             .then(res => res.json())
             .then(data => {
                 setTool(data);
@@ -53,7 +60,8 @@ const Purchase = () => {
             fetch('http://localhost:5000/order', {
                 method: "PUT",
                 headers: {
-                    "content-type": 'application/json'
+                    "authorization": `Bearer ${localStorage.getItem('accessToken')}`,
+                    "content-type": "application/json"
                 },
                 body: JSON.stringify(order)
             })

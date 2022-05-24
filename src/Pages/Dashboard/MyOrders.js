@@ -10,23 +10,18 @@ const MyOrders = () => {
     const navigate = useNavigate()
 
     useEffect(() => {
-        fetch(`http://localhost:5000/booking?user=${user.email}`, {
-            method: "GET",
-            headers: {
-                "authorization": `Bearer ${localStorage.getItem('accessToken')}`,
-                "content-type": "application/json"
-            }
-        })
+        fetch(`http://localhost:5000/myorder?email=${user?.email}`)
             .then(res => {
-                if (res.status === 401 || res.status === 403) {
-                    signOut(auth)
-                    localStorage.removeItem("accessToken")
-                    navigate('/')
-                }
-                return res.json()
+                // if (res.status === 401 || res.status === 403) {
+                //     signOut(auth)
+                //     localStorage.removeItem("accessToken")
+                //     navigate('/')
+                // }
+                // return res.json()
+                res.json()
             })
             .then(data => {
-                setTools(data)
+                console.log(data);
             })
     }, [user, navigate])
     return (
@@ -47,21 +42,21 @@ const MyOrders = () => {
                     </thead>
                     <tbody>
                         {
-                            tools.map((appointment, index) =>
+                            tools.map((tool, index) =>
 
-                                <tr key={appointment._id}>
+                                <tr key={tool._id}>
                                     <th>{index + 1}</th>
-                                    <td>{appointment.patientName}</td>
-                                    <td>{appointment.date}</td>
-                                    <td>{appointment.slot}</td>
-                                    <td>{appointment.treatment}</td>
+                                    <td>{tool.patientName}</td>
+                                    <td>{tool.date}</td>
+                                    <td>{tool.slot}</td>
+                                    <td>{tool.treatment}</td>
                                     <td>
-                                        {(appointment.price && !appointment.paid) && <Link to={`/dashboard/payment/${appointment._id}`}><button className='btn btn-xs btn-success'>Pay</button></Link>}
+                                        {(tool.price && !tool.paid) && <Link to={`/dashboard/payment/${tool._id}`}><button className='btn btn-xs btn-success'>Pay</button></Link>}
                                     </td>
                                     <td>
-                                        {(appointment.price && appointment.paid) && <div>
+                                        {(tool.price && tool.paid) && <div>
                                             <p><span className='text-success'>Paid</span></p>
-                                            <p><small className='text-success'>TransactionId: {appointment.transactionId}</small></p>
+                                            <p><small className='text-success'>TransactionId: {tool.transactionId}</small></p>
                                         </div>}
                                     </td>
                                 </tr>)
