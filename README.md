@@ -1,8 +1,23 @@
-# Getting Started with Create React App
+# PLEX TOOLS
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+PLEX TOOLS => [LIVE SITE](https://manufacturer-app-ea238.web.app/)
+
+## Features
+* Authentication feature implemented.
+* User can purchase any tools item from PLEX TOOLS. There is also a Dashboard route where user can update his/her profile, add review and his/her cart item. User also can pay by card from dashboard.
+* There is also an admin role for this site. Admin can add item, delete item, manage all order. Besides admin can make anyone admin of admin's wish.
+* In this site jwt also implemented for authorization.
+* There is also added some validation for non admin user.
+
+## Technology Used
+* React JS
+* Tailwind CSS(CSS framwork)
+* Daisy Ui(Tailwind component library)
+* Firebase
+* MongoDB
+* JSON Web token
+* Stipe (payment gateway)
 
 In the project directory, you can run:
 
