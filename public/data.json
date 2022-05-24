@@ -1,134 +1,74 @@
 [
     {
-        "name": "Teeth Orthodontics",
-        "price": 100,
-        "slots": [
-            "08.00 AM - 08.30 AM",
-            "08.30 AM - 09.00 AM",
-            "09.00 AM - 9.30 AM",
-            "09.30 AM - 10.00 AM",
-            "10.00 AM - 10.30 AM",
-            "10.30 AM - 11.00 AM",
-            "11.00 AM - 11.30 AM",
-            "11.30 AM - 12.00 AM",
-            "1.00 PM - 1.30 PM",
-            "1.30 PM - 2.00 PM",
-            "2.00 PM - 2.30 PM",
-            "2.30 PM - 3.00 PM",
-            "3.00 PM - 3.30 PM",
-            "3.30 PM - 4.00 PM",
-            "4.00 PM - 4.30 PM",
-            "4.30 PM - 5.00 PM"
-        ]
+        "price": 15,
+        "img": "http://placehold.it/32x32",
+        "name": "https: //i.ibb.co/6b1SKMD/screwdriverpro.png",
+        "quantity": 3000,
+        "minimumOrder": 100,
+        "description": "Proskit SD 2301 Soft Screwdriver is rugged reliable and trusted. Pro'sKit SD-2301 gain-soft screwdriver big sale for the best price in Bangladesh"
     },
     {
-        "name": "Cosmetic Dentistry",
-        "price": 100,
-        "slots": [
-            "08.00 AM - 08.30 AM",
-            "08.30 AM - 09.00 AM",
-            "09.00 AM - 9.30 AM",
-            "09.30 AM - 10.00 AM",
-            "10.00 AM - 10.30 AM",
-            "10.30 AM - 11.00 AM",
-            "11.00 AM - 11.30 AM",
-            "11.30 AM - 12.00 AM",
-            "1.00 PM - 1.30 PM",
-            "1.30 PM - 2.00 PM",
-            "2.00 PM - 2.30 PM",
-            "2.30 PM - 3.00 PM",
-            "3.00 PM - 3.30 PM",
-            "3.30 PM - 4.00 PM",
-            "4.00 PM - 4.30 PM",
-            "4.30 PM - 5.00 PM"
-        ]
+        "price": 50,
+        "img": "https: //i.ibb.co/y5WWBhV/pocket-Screwdriver.png",
+        "name": "Cordless Pocket Screwdriver",
+        "quantity": 1200,
+        "minimumOrder": 30,
+        "description": "15+1 Adjustable torque setting cordless screwdriver, which is come with li-ion battery, not only eco-friendly but longer service life time"
     },
     {
-        "name": "Teeth Cleaning",
-        "price": 100,
-        "slots": [
-            "08.00 AM - 08.30 AM",
-            "08.30 AM - 09.00 AM",
-            "09.00 AM - 9.30 AM",
-            "09.30 AM - 10.00 AM",
-            "10.00 AM - 10.30 AM",
-            "10.30 AM - 11.00 AM",
-            "11.00 AM - 11.30 AM",
-            "11.30 AM - 12.00 AM",
-            "1.00 PM - 1.30 PM",
-            "1.30 PM - 2.00 PM",
-            "2.00 PM - 2.30 PM",
-            "2.30 PM - 3.00 PM",
-            "3.00 PM - 3.30 PM",
-            "3.30 PM - 4.00 PM",
-            "4.00 PM - 4.30 PM",
-            "4.30 PM - 5.00 PM"
-        ]
+        "price": 60,
+        "img": "https: //i.ibb.co/SKPZxJR/angel-Grinder.png",
+        "name": "Angle Grinder",
+        "quantity": 1500,
+        "minimumOrder": 50,
+        "description": "Provides longer run-time and quick recharging time in about 1 hour."
     },
     {
-        "name": "Cavity Protection",
-        "price": 100,
-        "slots": [
-            "08.00 AM - 08.30 AM",
-            "08.30 AM - 09.00 AM",
-            "09.00 AM - 9.30 AM",
-            "09.30 AM - 10.00 AM",
-            "10.00 AM - 10.30 AM",
-            "10.30 AM - 11.00 AM",
-            "11.00 AM - 11.30 AM",
-            "11.30 AM - 12.00 AM",
-            "1.00 PM - 1.30 PM",
-            "1.30 PM - 2.00 PM",
-            "2.00 PM - 2.30 PM",
-            "2.30 PM - 3.00 PM",
-            "3.00 PM - 3.30 PM",
-            "3.30 PM - 4.00 PM",
-            "4.00 PM - 4.30 PM",
-            "4.30 PM - 5.00 PM"
-        ]
+        "price": 70,
+        "img": "https: //i.ibb.co/VvsQgGv/crimping-Tool.png",
+        "name": "Crimping Tool",
+        "quantity": 3000,
+        "minimumOrder": 60,
+        "description": "Parallel Action Crimping Tool For Insulated Open Barrel Connectors Commercial Type Manual Crimper for Rs.5450 online. Proskit CP 3006FD46 Parallel Action Crimping Tool For Insulated Open Barrel Connectors Commercial Ty best price in Bangladesh."
     },
     {
-        "name": "Pediatric Dental",
-        "price": 100,
-        "slots": [
-            "08.00 AM - 08.30 AM",
-            "08.30 AM - 09.00 AM",
-            "09.00 AM - 9.30 AM",
-            "09.30 AM - 10.00 AM",
-            "10.00 AM - 10.30 AM",
-            "10.30 AM - 11.00 AM",
-            "11.00 AM - 11.30 AM",
-            "11.30 AM - 12.00 AM",
-            "1.00 PM - 1.30 PM",
-            "1.30 PM - 2.00 PM",
-            "2.00 PM - 2.30 PM",
-            "2.30 PM - 3.00 PM",
-            "3.00 PM - 3.30 PM",
-            "3.30 PM - 4.00 PM",
-            "4.00 PM - 4.30 PM",
-            "4.30 PM - 5.00 PM"
-        ]
+        "price": 40,
+        "img": "https: //i.ibb.co/x8N6hmp/clamp.png",
+        "name": "Clamp Multimeter",
+        "quantity": 2600,
+        "minimumOrder": 100,
+        "description": "Hioki clamp meters are best-in-class measuring devices incorporating Hioki s gaining in current sensing technology.The 3280-10F is an average rectifying 1000A AC clamp meter that features an expansive energetic temperature range of -25C to 65C, skinny and compact clamp core and optional gymnastic current sensor that you can tape to set aside you acquire into the tightest bad skin."
     },
     {
-        "name": "Oral Surgery",
+        "price": 50,
+        "img": "https: //i.ibb.co/gm9TGpP/infared-Camera.png",
+        "name": "Infrared Camera",
+        "quantity": 2400,
+        "minimumOrder": 30,
+        "description": "The Testo 882 infrared camera is rugged and reliable and that is the most precise one-hand thermal imaging camera as well as pistol pact design from Testo. Special measuring modes including moisture image or high-temperature others make it ideal for a broad variety of exchange applications."
+    },
+    {
         "price": 100,
-        "slots": [
-            "08.00 AM - 08.30 AM",
-            "08.30 AM - 09.00 AM",
-            "09.00 AM - 9.30 AM",
-            "09.30 AM - 10.00 AM",
-            "10.00 AM - 10.30 AM",
-            "10.30 AM - 11.00 AM",
-            "11.00 AM - 11.30 AM",
-            "11.30 AM - 12.00 AM",
-            "1.00 PM - 1.30 PM",
-            "1.30 PM - 2.00 PM",
-            "2.00 PM - 2.30 PM",
-            "2.30 PM - 3.00 PM",
-            "3.00 PM - 3.30 PM",
-            "3.30 PM - 4.00 PM",
-            "4.00 PM - 4.30 PM",
-            "4.30 PM - 5.00 PM"
-        ]
+        "img": "https: //i.ibb.co/gznnyV2/corldlessdriver.png",
+        "name": "Impact Cordless Driver",
+        "quantity": 50,
+        "minimumOrder": 5000,
+        "description": "Brand new improved design with 3,000 ipm and 90 N.m Torque provide optimum performance."
+    },
+    {
+        "price": 30,
+        "img": "https://i.ibb.co/K2fq7dG/digitalmultimeter.png",
+        "name": "Digital Multimeter",
+        "quantity": 3000,
+        "minimumOrder": 100,
+        "description": "The Fluke 115 digital multimeter is a Compact Multimeter for Field Service Technicians, designed to be used as a general-purpose troubleshooting tool."
+    },
+    {
+        "price": 5,
+        "img": "https://i.ibb.co/Fz4PC8p/phMeter.png",
+        "name": "pH Meter",
+        "quantity": 3000,
+        "minimumOrder": 50,
+        "description": "The Testo 206-pH2 pH meter allows you to measure the pH value and temperature of semi-solid media safely and reliably. Ideal for laboratories, industrial production processes, and the food industry. "
     }
 ]

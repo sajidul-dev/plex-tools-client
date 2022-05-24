@@ -21,11 +21,11 @@ const Login = () => {
 
     let signInError
     useEffect(() => {
-        // if (token) {
-        //     navigate(from, { replace: true });
-        // }
+        if (user || googleUser) {
+            navigate(from, { replace: true });
+        }
 
-    }, [from, navigate])
+    }, [from, navigate, googleUser, user])
 
     if (loading || googleLoading || sending) {
         // return <Loading></Loading>
