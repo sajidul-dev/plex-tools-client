@@ -4,6 +4,8 @@ import auth from '../../firebase.init';
 import { useSendPasswordResetEmail, useSignInWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import toast from 'react-hot-toast';
+import useToken from '../../hooks/useTooken';
+import Loading from '../Shared/Loading';
 
 const Login = () => {
     const [signInWithGoogle, googleUser, googleLoading, googleError] = useSignInWithGoogle(auth);
@@ -13,7 +15,7 @@ const Login = () => {
     const navigate = useNavigate()
     let from = location.state?.from?.pathname || "/";
     const email = getValues("email")
-    // const [token] = useToken(user || googleUser)
+    const [token] = useToken(user || googleUser)
 
     const [sendPasswordResetEmail, sending] = useSendPasswordResetEmail(
         auth
@@ -21,14 +23,14 @@ const Login = () => {
 
     let signInError
     useEffect(() => {
-        if (user || googleUser) {
+        if (token) {
             navigate(from, { replace: true });
         }
 
     }, [from, navigate, googleUser, user])
 
     if (loading || googleLoading || sending) {
-        // return <Loading></Loading>
+        return <Loading></Loading>
     }
     if (error || googleError) {
         signInError = <p className='text-red-500'><small>{error?.message || googleError?.message}</small></p>
