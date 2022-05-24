@@ -11,7 +11,7 @@ import Purchase from './Pages/Home/Purchase';
 
 function App() {
   return (
-    <div>
+    <div className='font-[roboto]'>
       <Navbar></Navbar>
       <Routes>
         <Route path='/' element={<Home />}></Route>

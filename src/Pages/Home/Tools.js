@@ -1,5 +1,4 @@
 import React from 'react';
-import { useQuery } from 'react-query';
 import useTools from '../../hooks/useTools';
 import Loading from '../Shared/Loading';
 import Tool from './Tool';
