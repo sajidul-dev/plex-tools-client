@@ -17,7 +17,8 @@ const AddReview = () => {
         const userReview = {
             rating: ratings,
             review,
-            email: user.email
+            email: user.email,
+            name: user.displayName
         }
         fetch('http://localhost:5000/addreview', {
             method: "PUT",

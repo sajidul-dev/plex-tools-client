@@ -12,6 +12,7 @@ const Purchase = () => {
     const quantityRef = useRef('')
     const addressRef = useRef('')
     const phoneRef = useRef('')
+    const [price, setPrice] = useState(0)
     const [quantityError, setQuantityError] = useState('')
 
     useEffect(() => {
@@ -28,6 +29,10 @@ const Purchase = () => {
                 setTool(data);
             })
     }, [id])
+    // useEffect(() => {
+
+
+    // }, [tool.price])
     const placeOrder = (e) => {
         e.preventDefault()
         const inputQuantity = parseInt(quantityRef.current.value)
@@ -38,6 +43,8 @@ const Purchase = () => {
         const toolName = tool.name
         const toolId = tool._id
 
+        // setPrice(parseInt(quantityRef.current.value) * tool.price)
+        // const price =price
         const order = {
             name,
             email,
@@ -45,7 +52,8 @@ const Purchase = () => {
             phone,
             quantity: inputQuantity,
             toolName,
-            toolId
+            toolId,
+            price: (tool.price * inputQuantity)
         }
         if (inputQuantity < tool.minimumOrder) {
             setQuantityError('Minimum order reqiure ')
@@ -81,7 +89,7 @@ const Purchase = () => {
                 <div class="card-body">
                     <h2 class="text-xl text-bold text-primary">Product Name: {tool.name}</h2>
                     <p className='text-lg'><span className='font-bold'>Description:</span> {tool.description}</p>
-                    <p className='font-bold text-lg'>Price: ${tool.quantity}/unit</p>
+                    <p className='font-bold text-lg'>Price: ${tool.price}/unit</p>
                     <p className='font-bold text-lg'>Quantity: {tool.quantity} Unit</p>
                     <p className='font-bold text-lg'>Minimum Order: {tool.minimumOrder} Unit</p>
                 </div>
@@ -108,7 +116,10 @@ const Purchase = () => {
                     <span class="label-text">Quantity</span>
                 </label>
                 <input ref={quantityRef} type="number" placeholder={`Minimun order ${tool.minimumOrder}`} class="input input-bordered w-full max-w-xs " />
-                <p className='text-red-500'>{quantityError}</p>
+                {
+                    quantityError ? <p>{quantityError}</p> : <p>{`Subtotal: ${price}`}</p>
+                }
+                {/* <p className='text-red-500'>{quantityError ? `${quantityError}` : <p></p>}</p> */}
                 <input type="submit" placeholder='' value='Place Order' class="input input-bordered w-full max-w-xs mt-5 btn btn-primary" />
             </form>
         </div>
