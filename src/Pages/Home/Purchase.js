@@ -28,24 +28,7 @@ const Purchase = () => {
     if (isLoading) {
         return <Loading />
     }
-    // useEffect(() => {
-    //     fetch(`http://localhost:5000/tool/${id}`, {
-    //         method: "GET",
-    //         headers: {
-    //             "authorization": `Bearer ${localStorage.getItem('accessToken')}`,
-    //             "content-type": "application/json"
-    //         },
 
-    //     })
-    //         .then(res => res.json())
-    //         .then(data => {
-    //             setTool(data);
-    //         })
-    // }, [id])
-    // useEffect(() => {
-
-
-    // }, [tool.price])
     const placeOrder = (e) => {
         e.preventDefault()
         const inputQuantity = parseInt(quantityRef.current.value)

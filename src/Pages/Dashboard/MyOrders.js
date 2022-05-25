@@ -15,7 +15,6 @@ const MyOrders = () => {
             method: "GET",
             headers: {
                 "authorization": `Bearer ${localStorage.getItem('accessToken')}`,
-                "content-type": "application/json"
             },
         })
             .then(res => {
@@ -25,15 +24,14 @@ const MyOrders = () => {
                     navigate('/')
                 }
                 return res.json()
-                // res.json()
             })
             .then(data => {
-                if (loading) {
-                    return <Loading />
-                }
+                // if (loading) {
+                //     return <Loading />
+                // }
                 setTools(data)
             })
-    }, [user, navigate])
+    }, [user, navigate, loading])
     return (
         <div>
             <h2>My Orders {tools.length}</h2>

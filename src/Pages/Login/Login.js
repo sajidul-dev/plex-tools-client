@@ -16,6 +16,7 @@ const Login = () => {
     let from = location.state?.from?.pathname || "/";
     const email = getValues("email")
     const [token] = useToken(user || googleUser)
+    console.log(token);
 
     const [sendPasswordResetEmail, sending] = useSendPasswordResetEmail(
         auth

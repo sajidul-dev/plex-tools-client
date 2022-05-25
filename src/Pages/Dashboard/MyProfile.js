@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react';
+import React from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { useForm } from 'react-hook-form';
 import toast from 'react-hot-toast';
@@ -9,14 +9,8 @@ import Loading from '../Shared/Loading';
 const MyProfile = () => {
     const { register, formState: { errors }, handleSubmit, reset } = useForm();
     const [user] = useAuthState(auth)
-    const addressRef = useRef('')
-    const educationRef = useRef('')
-    const linkedinRef = useRef('')
-    const phoneRef = useRef('')
 
     const imageStorageKey = '02edd5c413d22a736d8b7acfa51c03ac'
-
-
 
     const onSubmit = (data) => {
         const name = user.displayName
@@ -25,15 +19,7 @@ const MyProfile = () => {
         const address = data.address
         const linkedin = data.linkedin
         const image = data.image[0]
-        const u = {
-            name,
-            phone,
-            education,
-            address,
-            linkedin,
-            image
 
-        }
         const formData = new FormData();
         formData.append('image', image);
         const url = `https://api.imgbb.com/1/upload?key=${imageStorageKey}`
@@ -61,19 +47,18 @@ const MyProfile = () => {
                         method: "PUT",
                         headers: {
                             'content-type': 'application/json',
-                            authorization: `Bearer ${localStorage.getItem('accessToken')}`
+                            "authorization": `Bearer ${localStorage.getItem('accessToken')}`
                         },
                         body: JSON.stringify(updatedUser)
                     })
                         .then(res => res.json())
                         .then(inserted => {
-                            console.log(inserted);
                             if (inserted.acknowledged) {
-                                toast.success("Doctor added successfully")
+                                toast.success("Updated Profile successfully")
                                 reset()
                             }
                             else {
-                                toast.error("Failed to added doctor")
+                                toast.error("Failed to update")
                             }
                         })
                 }
@@ -83,7 +68,13 @@ const MyProfile = () => {
     }
 
 
-    const { data: displayUser, isLoading } = useQuery('user', () => fetch(`http://localhost:5000/user?email=${user.email}`).then(res => res.json()))
+    const { data: displayUser, isLoading } = useQuery('user', () => fetch(`http://localhost:5000/user?email=${user.email}`, {
+        method: "GET",
+        headers: {
+            "authorization": `Bearer ${localStorage.getItem('accessToken')}`,
+            "content-type": "application/json"
+        },
+    }).then(res => res.json()))
     if (isLoading) {
         return <Loading />
     }
