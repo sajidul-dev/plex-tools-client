@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useQuery } from 'react-query';
 import Loading from '../Shared/Loading';
 import Review from './Review';
@@ -10,17 +10,23 @@ const Reviews = () => {
     if (isLoading) {
         return <Loading />
     }
-    let reversed = []
-    for (let i = reviews.length; i > 0; i--) {
-        reversed.push(reviews[i])
+
+    function reverseArr(input) {
+        let reversed = []
+        for (var i = input.length - 1; i >= 0; i--) {
+            reversed.push(input[i]);
+        }
+        return reversed;
     }
-    console.log(reversed);
+    const reverseResult = reverseArr(reviews)
+    const result = reverseResult.slice(0, 3)
+
     return (
         <div>
             <p>Reviews: {reviews.length}</p>
             <div className='grid lg:grid-cols-3'>
                 {
-                    reviews.reverse().map(singleReview => <Review key={singleReview._id}
+                    result.slice(-result.length).map(singleReview => <Review key={singleReview._id}
                         singleReview={singleReview}
                     ></Review>)
                 }

@@ -14,6 +14,7 @@ import AllTools from './Pages/AllTools/AllTools';
 import AddReview from './Pages/Dashboard/AddReview';
 import Portfolio from './Pages/Portfolio/Portfolio';
 import Notfound from './Pages/Notfound/Notfound';
+import MyProfile from './Pages/Dashboard/MyProfile';
 
 function App() {
   return (
@@ -38,8 +39,8 @@ function App() {
         }>
           <Route index element={<MyOrders />}></Route>
           <Route path='review' element={<AddReview />}></Route>
-          {/* <Route path='history' element={<MyHistory />}></Route>
-          <Route path='payment/:id' element={<Payment />}></Route>
+          <Route path='myprofile' element={<MyProfile />}></Route>
+          {/* <Route path='payment/:id' element={<Payment />}></Route>
           <Route path='users' element={<RequireAdmin><Users /></RequireAdmin>}></Route>
           <Route path='addDoctor' element={<RequireAdmin><AddDoctor /></RequireAdmin>}></Route>
           <Route path='manageDoctor' element={<RequireAdmin><ManageDoctors /></RequireAdmin>}></Route> */}

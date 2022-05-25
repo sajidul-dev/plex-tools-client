@@ -22,7 +22,7 @@ const Review = ({ singleReview }) => {
                 />
 
             </div>
-            <p>Excellent variety. I would recommend this for anyone who wants to try a perfume without breaking the bank or being stuck with a scent that you cannot stand. You can spray the card and let the scent dry down to get a true scent experience.Well worth the money to try them out. </p>
+            <p>{review} </p>
         </div>
     );
 };
