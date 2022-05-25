@@ -2,11 +2,13 @@ import { data } from 'autoprefixer';
 import React, { useEffect, useRef, useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import toast from 'react-hot-toast';
+import { useQuery } from 'react-query';
 import { useParams } from 'react-router-dom';
 import auth from '../../firebase.init';
+import Loading from '../Shared/Loading';
 
 const Purchase = () => {
-    const [tool, setTool] = useState([])
+    // const [tool, setTool] = useState([])
     const { id } = useParams()
     const [user] = useAuthState(auth)
     const quantityRef = useRef('')
@@ -15,20 +17,31 @@ const Purchase = () => {
     const [price, setPrice] = useState(0)
     const [quantityError, setQuantityError] = useState('')
 
-    useEffect(() => {
-        fetch(`http://localhost:5000/tool/${id}`, {
-            method: "GET",
-            headers: {
-                "authorization": `Bearer ${localStorage.getItem('accessToken')}`,
-                "content-type": "application/json"
-            },
+    const { data: tool, isLoading, refetch } = useQuery('tool', () => fetch(`http://localhost:5000/tool/${id}`, {
+        method: "GET",
+        headers: {
+            "authorization": `Bearer ${localStorage.getItem('accessToken')}`,
+            "content-type": "application/json"
+        },
+    }).then(res => res.json()))
 
-        })
-            .then(res => res.json())
-            .then(data => {
-                setTool(data);
-            })
-    }, [id])
+    if (isLoading) {
+        return <Loading />
+    }
+    // useEffect(() => {
+    //     fetch(`http://localhost:5000/tool/${id}`, {
+    //         method: "GET",
+    //         headers: {
+    //             "authorization": `Bearer ${localStorage.getItem('accessToken')}`,
+    //             "content-type": "application/json"
+    //         },
+
+    //     })
+    //         .then(res => res.json())
+    //         .then(data => {
+    //             setTool(data);
+    //         })
+    // }, [id])
     // useEffect(() => {
 
 
@@ -43,7 +56,7 @@ const Purchase = () => {
         const toolName = tool.name
         const toolId = tool._id
 
-        // setPrice(parseInt(quantityRef.current.value) * tool.price)
+        setPrice(inputQuantity * tool.price)
         // const price =price
         const order = {
             name,
@@ -73,23 +86,28 @@ const Purchase = () => {
                 },
                 body: JSON.stringify(order)
             })
-                .then(res => res.json())
+                .then(res => {
+
+                    res.json()
+                })
                 .then(data => {
+                    refetch()
                     console.log(data);
                 })
 
         }
+        e.target.reset()
     }
 
     return (
         <div className='grid sm:grid-cols-1 lg:grid-cols-2 mt-12'>
 
             <div class="card lg:card-side bg-base-100 w-4/5 mx-auto">
-                <figure><img src={tool.img} alt="Album" /></figure>
-                <div class="card-body">
-                    <h2 class="text-xl text-bold text-primary">Product Name: {tool.name}</h2>
+                <figure><img src={tool.img} alt="Album" className='mb-auto' /></figure>
+                <div class="mx-8">
+                    <h2 class="text-xl text-bold text-primary my-3">Product Name: {tool.name}</h2>
                     <p className='text-lg'><span className='font-bold'>Description:</span> {tool.description}</p>
-                    <p className='font-bold text-lg'>Price: ${tool.price}/unit</p>
+                    <p className='font-bold text-lg'>Price: ${tool.price}/Unit</p>
                     <p className='font-bold text-lg'>Quantity: {tool.quantity} Unit</p>
                     <p className='font-bold text-lg'>Minimum Order: {tool.minimumOrder} Unit</p>
                 </div>

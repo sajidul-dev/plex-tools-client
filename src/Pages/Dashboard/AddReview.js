@@ -32,8 +32,8 @@ const AddReview = () => {
     }
 
     return (
-        <div>
-            <form onSubmit={handleAddReview}>
+        <div className='mt-12 ml-8'>
+            <form onSubmit={handleAddReview} >
                 <textarea name='review' class="textarea textarea-bordered" placeholder="Please insert your review"></textarea>
                 <p>Your Rating:  <ReactStars
                     count={5}
