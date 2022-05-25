@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@react-icons/all-files": "^4.1.0",
     "@testing-library/jest-dom": "^5.16.4",
     "@testing-library/react": "^13.2.0",
     "@testing-library/user-event": "^13.5.0",
@@ -13,6 +14,7 @@
     "react-firebase-hooks": "^5.0.3",
     "react-hook-form": "^7.31.2",
     "react-hot-toast": "^2.2.0",
+    "react-icons": "^4.3.1",
     "react-query": "^3.39.0",
     "react-rating-stars-component": "^2.2.0",
     "react-router-dom": "^6.3.0",
