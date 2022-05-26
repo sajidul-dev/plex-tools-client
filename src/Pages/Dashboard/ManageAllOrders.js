@@ -52,6 +52,7 @@ const ManageAllOrders = () => {
                                 <td>{order.toolName}</td>
                                 <td>{order.price}/{order.paid === true && <small className='text-success'>Paid</small>}</td>
                                 {(order.paid === true && !order.shifted) && <td><button onClick={() => handleShift(order._id)} className='btn btn-xs btn-success'>Ready to Shift</button></td>}
+                                <td>{order.shifted && <p className='text-primary'>Shifted</p>}</td>
                             </tr>)
                         }
 
