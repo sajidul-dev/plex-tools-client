@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
+import toast from 'react-hot-toast';
 import ReactStars from 'react-rating-stars-component';
 import auth from '../../firebase.init';
 
@@ -28,7 +29,10 @@ const AddReview = () => {
             body: JSON.stringify(userReview)
         })
             .then(res => res.json())
-            .then(data => console.log(data))
+            .then(data => {
+                toast.success("Thanks for review!!")
+                console.log(data)
+            })
     }
 
     return (

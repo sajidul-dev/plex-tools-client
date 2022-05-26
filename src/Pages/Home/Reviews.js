@@ -19,12 +19,12 @@ const Reviews = () => {
         return reversed;
     }
     const reverseResult = reverseArr(reviews)
-    const result = reverseResult.slice(0, 3)
+    const result = reverseResult.slice(0, 6)
 
     return (
-        <div>
-            <p>Reviews: {reviews.length}</p>
-            <div className='grid lg:grid-cols-3'>
+        <div className='mt-12'>
+            <p className='my-8 text-3xl text-center text-primary'>What out client says-</p>
+            <div className='grid lg:grid-cols-3 px-12 gap-12'>
                 {
                     result.slice(-result.length).map(singleReview => <Review key={singleReview._id}
                         singleReview={singleReview}
