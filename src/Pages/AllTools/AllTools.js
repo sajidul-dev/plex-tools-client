@@ -4,7 +4,7 @@ import Tool from '../Home/Tool';
 import Loading from '../Shared/Loading';
 
 const AllTools = () => {
-    const [tools, isLoading] = useTools()
+    const [tools, isLoading, refetch] = useTools()
     if (isLoading) {
         return <Loading />
     }
