@@ -1,5 +1,4 @@
-import React, { useEffect } from 'react';
-import { useQuery } from 'react-query';
+import React from 'react';
 
 const DeleteModal = ({ user, setUser, refetch }) => {
 
