@@ -1,4 +1,5 @@
 import React from 'react';
+import toast from 'react-hot-toast';
 import useTools from '../../hooks/useTools';
 import Loading from '../Shared/Loading';
 
@@ -6,6 +7,27 @@ const ManageProducts = () => {
     const [tools, isLoading, refetch] = useTools()
     if (isLoading) {
         return <Loading />
+    }
+
+    const handleDelete = (id) => {
+        const confirm = window.confirm("Are you sure?")
+        if (confirm) {
+            const url = `http://localhost:5000/deletetool/${id}`
+            fetch(url, {
+                method: "DELETE",
+                headers: {
+                    'content-type': 'application/json',
+                    "authorization": `Bearer ${localStorage.getItem('accessToken')}`
+                },
+            })
+                .then(res => res.json())
+                .then(data => {
+                    refetch()
+                    toast.success("Item Deleted Successfully")
+                    console.log(data);
+                })
+        }
+
     }
     return (
         <div>
@@ -32,7 +54,7 @@ const ManageProducts = () => {
                                 </div></td>
                                 <td>{tool.name}</td>
                                 <td>{tool.quantity}</td>
-                                <td><button className='btn btn-xs btn-error'>Delete</button></td>
+                                <td><button onClick={() => handleDelete(tool._id)} className='btn btn-xs btn-error'>Delete</button></td>
                             </tr>)
                         }
 
