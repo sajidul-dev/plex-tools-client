@@ -44,6 +44,7 @@ const MyOrders = () => {
                             <th>Quantity</th>
                             <th>PRICE</th>
                             <th>STATUS</th>
+                            <th>PAYMENT STATUS</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -51,10 +52,6 @@ const MyOrders = () => {
                         {
                             tools.map((tool, index) => <OrderRow key={tool._id} tool={tool} index={index}></OrderRow>)
                         }
-
-
-
-
                     </tbody>
                 </table>
             </div>

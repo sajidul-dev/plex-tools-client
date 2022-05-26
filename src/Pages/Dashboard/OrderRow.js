@@ -11,6 +11,8 @@ const OrderRow = ({ tool, index }) => {
             <td>$ {tool.price}</td>
             <td>
                 {(tool.price && !tool.paid) && <Link to={`/dashboard/payment/${tool._id}`}><button className='btn btn-xs btn-success'>Pay</button></Link>}
+                {tool.shifted === true && <p className='text-success'>Shifted</p>}
+                {(tool.paid === true && !tool.shifted) && <p className='text-warning'>pending</p>}
             </td>
             <td>
                 {(tool.price && tool.paid) && <>
