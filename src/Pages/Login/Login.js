@@ -110,9 +110,9 @@ const Login = () => {
                             </label>
                         </div>
                         {signInError}
-                        <input className='btn w-full max-w-xs' type="submit" value="Login" />
+                        <input className='btn w-full max-w-xs btn-primary' type="submit" value="Login" />
                     </form>
-                    <p><small>New to Doctors Portal <Link className='text-primary' to='/signup'>Create New Account</Link></small></p>
+                    <p><small>New to Plex Tool <Link className='text-primary' to='/signup'>Create New Account</Link></small></p>
                     <p><small>Forgot Password <button onClick={resetPassword} className='text-primary btn btn-link' >Reset Password</button></small></p>
                     <div className="divider">OR</div>
                     <button

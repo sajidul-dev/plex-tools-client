@@ -14,7 +14,7 @@ const Portfolio = () => {
             <h2 className='text-xl'>Email: mdsajidulalam1245@gmail.com</h2>
             <h2 className='text-xl'>Education: Bsc in Computer Science and Engineering</h2>
             <h2 className='text-xl'>Institution: Port City International University</h2>
-            <h2 className='text-xl'>Skills: HTML5,CSS3,Javscript,React Js, Firebase Authentication, MongoDB,</h2>
+            <h2 className='text-xl'>Skills: HTML5,CSS3,Javscript,React Js, Firebase Authentication, MongoDB(Database),Stripe(Payment System)</h2>
             <h2 className='text-xl font-semibold'>Projects: </h2>
             <a className='btn btn-sm btn-accent text-white my-3' href="https://warehouse-management-949b6.web.app/">Warehouse Management</a>
             <br />

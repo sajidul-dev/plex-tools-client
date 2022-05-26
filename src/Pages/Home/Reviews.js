@@ -22,7 +22,7 @@ const Reviews = () => {
     const result = reverseResult.slice(0, 6)
 
     return (
-        <div className='mt-12'>
+        <div className=''>
             <p className='my-8 text-3xl text-center text-primary'>What out client says-</p>
             <div className='grid lg:grid-cols-3 px-12 gap-12'>
                 {

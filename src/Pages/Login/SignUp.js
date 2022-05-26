@@ -113,8 +113,8 @@ const SignUp = () => {
                                         message: "Password is required"
                                     },
                                     minLength: {
-                                        value: 6,
-                                        message: "Must be 6 characters or longer"
+                                        value: /[!@#\$%\^&\*_]/,
+                                        message: "Please provide a strong password"
                                     }
                                 })}
                             />
@@ -127,13 +127,13 @@ const SignUp = () => {
                             </label>
                         </div>
                         {signInError}
-                        <input className='btn w-full max-w-xs' type="submit" value="SIGN UP" />
+                        <input className='btn w-full max-w-xs btn-primary' type="submit" value="SIGN UP" />
                     </form>
                     <p><small>Already have an acount <Link className='text-primary' to='/login'>Please Login</Link></small></p>
                     <div className="divider">OR</div>
                     <button
                         onClick={() => signInWithGoogle()}
-                        className="btn btn-outline">Continue with Google</button>
+                        className="btn btn-outline ">Continue with Google</button>
                 </div>
             </div>
         </div>
