@@ -21,7 +21,7 @@ const AddReview = () => {
             email: user.email,
             name: user.displayName
         }
-        fetch('http://localhost:5000/addreview', {
+        fetch('https://hidden-ravine-83246.herokuapp.com/addreview', {
             method: "PUT",
             headers: {
                 'content-type': 'application/json'
@@ -38,7 +38,7 @@ const AddReview = () => {
     return (
         <div className='mt-12 ml-8'>
             <form onSubmit={handleAddReview} >
-                <textarea name='review' class="textarea textarea-bordered" placeholder="Please insert your review"></textarea>
+                <textarea name='review' className="textarea textarea-bordered" placeholder="Please insert your review"></textarea>
                 <p>Your Rating:  <ReactStars
                     count={5}
                     onChange={ratingChanged}
@@ -47,7 +47,7 @@ const AddReview = () => {
                     activeColor="#ffd700"
                 /></p>
 
-                <input type="submit" value='Add Review' class="input input-bordered w-full max-w-xs btn btn-primary" />
+                <input type="submit" value='Add Review' className="input input-bordered w-full max-w-xs btn btn-primary" />
             </form>
         </div>
     );

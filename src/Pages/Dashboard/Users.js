@@ -7,7 +7,7 @@ import UserRow from './UserRow';
 const Users = () => {
     const [user, setUser] = useState(null)
 
-    const { data: users, isLoading, refetch } = useQuery('alltools', () => fetch('http://localhost:5000/alluser', {
+    const { data: users, isLoading, refetch } = useQuery('alltools', () => fetch('https://hidden-ravine-83246.herokuapp.com/alluser', {
         method: 'GET',
         headers: {
             "authorization": `Bearer ${localStorage.getItem('accessToken')}`,
@@ -22,8 +22,8 @@ const Users = () => {
     return (
         <div>
             <h2>Hello form users {users.length}</h2>
-            <div class="overflow-x-auto">
-                <table class="table w-full">
+            <div className="overflow-x-auto">
+                <table className="table w-full">
 
                     <thead>
                         <tr>

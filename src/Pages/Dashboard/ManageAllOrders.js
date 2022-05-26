@@ -4,7 +4,7 @@ import { useQuery } from 'react-query';
 import Loading from '../Shared/Loading';
 
 const ManageAllOrders = () => {
-    const { data: allOrders, isLoading, refetch } = useQuery('allorders', () => fetch('http://localhost:5000/allorders', {
+    const { data: allOrders, isLoading, refetch } = useQuery('allorders', () => fetch('https://hidden-ravine-83246.herokuapp.com/allorders', {
         method: 'GET',
         headers: {
             "authorization": `Bearer ${localStorage.getItem('accessToken')}`,
@@ -16,7 +16,7 @@ const ManageAllOrders = () => {
     }
 
     const handleShift = (id) => {
-        const url = `http://localhost:5000/shifted/${id}`
+        const url = `https://hidden-ravine-83246.herokuapp.com/shifted/${id}`
         fetch(url, {
             method: 'PATCH',
             headers: {
@@ -33,8 +33,8 @@ const ManageAllOrders = () => {
 
     return (
         <div>
-            <div class="overflow-x-auto">
-                <table class="table w-full">
+            <div className="overflow-x-auto">
+                <table className="table w-full">
                     <thead>
                         <tr>
                             <th></th>

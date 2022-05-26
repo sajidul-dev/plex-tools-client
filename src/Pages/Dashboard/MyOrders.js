@@ -12,7 +12,8 @@ const MyOrders = () => {
 
 
     useEffect(() => {
-        fetch(`http://localhost:5000/myorder?email=${user?.email}`, {
+
+        fetch(`https://hidden-ravine-83246.herokuapp.com/myorder?email=${user?.email}`, {
             method: "GET",
             headers: {
                 "authorization": `Bearer ${localStorage.getItem('accessToken')}`,
@@ -29,7 +30,11 @@ const MyOrders = () => {
             .then(data => {
                 setTools(data)
             })
+
     }, [user, navigate, loading])
+
+
+
     return (
         <div>
             <h2>My Orders {tools.length}</h2>

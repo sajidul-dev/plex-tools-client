@@ -12,7 +12,7 @@ const ManageProducts = () => {
     const handleDelete = (id) => {
         const confirm = window.confirm("Are you sure?")
         if (confirm) {
-            const url = `http://localhost:5000/deletetool/${id}`
+            const url = `https://hidden-ravine-83246.herokuapp.com/deletetool/${id}`
             fetch(url, {
                 method: "DELETE",
                 headers: {
@@ -31,8 +31,8 @@ const ManageProducts = () => {
     }
     return (
         <div>
-            <div class="overflow-x-auto">
-                <table class="table w-full">
+            <div className="overflow-x-auto">
+                <table className="table w-full">
                     <thead>
                         <tr>
                             <th></th>
@@ -47,8 +47,8 @@ const ManageProducts = () => {
                         {
                             tools.map((tool, index) => <tr>
                                 <th>{index + 1}</th>
-                                <td><div class="avatar">
-                                    <div class="w-12">
+                                <td><div className="avatar">
+                                    <div className="w-12">
                                         <img src={tool.img} alt='' />
                                     </div>
                                 </div></td>

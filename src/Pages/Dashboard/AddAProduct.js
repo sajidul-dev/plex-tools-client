@@ -37,7 +37,7 @@ const AddAProduct = () => {
                     }
                     // send to database
                     console.log(updatedUser);
-                    fetch('http://localhost:5000/addproduct', {
+                    fetch('https://hidden-ravine-83246.herokuapp.com/addproduct', {
                         method: "POST",
                         headers: {
                             'content-type': 'application/json',

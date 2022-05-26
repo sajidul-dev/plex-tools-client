@@ -1,5 +1,5 @@
 import { data } from 'autoprefixer';
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useRef, useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import toast from 'react-hot-toast';
 import { useQuery } from 'react-query';
@@ -17,7 +17,7 @@ const Purchase = () => {
     const [price, setPrice] = useState(0)
     const [quantityError, setQuantityError] = useState('')
 
-    const { data: tool, isLoading, refetch } = useQuery('tool', () => fetch(`http://localhost:5000/tool/${id}`, {
+    const { data: tool, isLoading, refetch } = useQuery('tool', () => fetch(`https://hidden-ravine-83246.herokuapp.com/tool/${id}`, {
         method: "GET",
         headers: {
             "authorization": `Bearer ${localStorage.getItem('accessToken')}`,
@@ -40,7 +40,6 @@ const Purchase = () => {
         const toolId = tool._id
 
         setPrice(inputQuantity * tool.price)
-        // const price =price
         const order = {
             name,
             email,
@@ -61,7 +60,7 @@ const Purchase = () => {
         }
         else {
             setQuantityError('')
-            fetch('http://localhost:5000/order', {
+            fetch('https://hidden-ravine-83246.herokuapp.com/order', {
                 method: "PUT",
                 headers: {
                     "authorization": `Bearer ${localStorage.getItem('accessToken')}`,
@@ -75,7 +74,7 @@ const Purchase = () => {
                 })
                 .then(data => {
                     refetch()
-                    console.log(data);
+                    toast.success("Pursched confirm")
                 })
 
         }
@@ -85,43 +84,43 @@ const Purchase = () => {
     return (
         <div className='grid sm:grid-cols-1 lg:grid-cols-2 mt-12'>
 
-            <div class="card lg:card-side bg-base-100 w-4/5 mx-auto">
+            <div className="card lg:card-side bg-base-100 w-4/5 mx-auto">
                 <figure><img src={tool.img} alt="Album" className='mb-auto' /></figure>
-                <div class="mx-8">
-                    <h2 class="text-xl text-bold text-primary my-3">Product Name: {tool.name}</h2>
+                <div className="mx-8">
+                    <h2 className="text-xl text-bold text-primary my-3">Product Name: {tool.name}</h2>
                     <p className='text-lg'><span className='font-bold'>Description:</span> {tool.description}</p>
                     <p className='font-bold text-lg'>Price: ${tool.price}/Unit</p>
                     <p className='font-bold text-lg'>Quantity: {tool.quantity} Unit</p>
                     <p className='font-bold text-lg'>Minimum Order: {tool.minimumOrder} Unit</p>
                 </div>
             </div>
-            <form onSubmit={placeOrder} class="form-control w-full max-w-xs mr-auto">
-                <label class="label">
-                    <span class="label-text">Name</span>
+            <form onSubmit={placeOrder} className="form-control w-full max-w-xs mr-auto">
+                <label className="label">
+                    <span className="label-text">Name</span>
                 </label>
-                <input type="text" readOnly value={user.displayName} placeholder="Type here" class="input input-bordered w-full max-w-xs" />
-                <label class="label">
-                    <span class="label-text">Email</span>
+                <input type="text" readOnly value={user.displayName} placeholder="Type here" className="input input-bordered w-full max-w-xs" />
+                <label className="label">
+                    <span className="label-text">Email</span>
 
                 </label>
-                <input type="text" readOnly value={user.email} placeholder="Type here" class="input input-bordered w-full max-w-xs" />
-                <label class="label">
-                    <span class="label-text">Address</span>
+                <input type="text" readOnly value={user.email} placeholder="Type here" className="input input-bordered w-full max-w-xs" />
+                <label className="label">
+                    <span className="label-text">Address</span>
                 </label>
-                <input ref={addressRef} type="text" placeholder="Your Address" class="input input-bordered w-full max-w-xs" />
-                <label class="label">
-                    <span class="label-text">Phone Number</span>
+                <input ref={addressRef} type="text" placeholder="Your Address" className="input input-bordered w-full max-w-xs" />
+                <label className="label">
+                    <span className="label-text">Phone Number</span>
                 </label>
-                <input ref={phoneRef} type="text" placeholder="Your Number" class="input input-bordered w-full max-w-xs" />
-                <label class="label">
-                    <span class="label-text">Quantity</span>
+                <input ref={phoneRef} type="text" placeholder="Your Number" className="input input-bordered w-full max-w-xs" />
+                <label className="label">
+                    <span className="label-text">Quantity</span>
                 </label>
-                <input ref={quantityRef} type="number" placeholder={`Minimun order ${tool.minimumOrder}`} class="input input-bordered w-full max-w-xs " />
+                <input ref={quantityRef} type="number" placeholder={`Minimun order ${tool.minimumOrder}`} className="input input-bordered w-full max-w-xs " />
                 {
                     quantityError ? <p>{quantityError}</p> : <p>{`Subtotal: ${price}`}</p>
                 }
                 {/* <p className='text-red-500'>{quantityError ? `${quantityError}` : <p></p>}</p> */}
-                <input type="submit" placeholder='' value='Place Order' class="input input-bordered w-full max-w-xs mt-5 btn btn-primary" />
+                <input type="submit" placeholder='' value='Place Order' className="input input-bordered w-full max-w-xs mt-5 btn btn-primary" />
             </form>
         </div>
     );

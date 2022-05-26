@@ -43,7 +43,7 @@ const MyProfile = () => {
                     }
                     // send to database
 
-                    fetch(`http://localhost:5000/updateduser?email=${user.email}`, {
+                    fetch(`https://hidden-ravine-83246.herokuapp.com/updateduser?email=${user.email}`, {
                         method: "PUT",
                         headers: {
                             'content-type': 'application/json',
@@ -68,7 +68,7 @@ const MyProfile = () => {
     }
 
 
-    const { data: displayUser, isLoading } = useQuery('user', () => fetch(`http://localhost:5000/user?email=${user.email}`, {
+    const { data: displayUser, isLoading } = useQuery('user', () => fetch(`https://hidden-ravine-83246.herokuapp.com/user?email=${user.email}`, {
         method: "GET",
         headers: {
             "authorization": `Bearer ${localStorage.getItem('accessToken')}`,
@@ -81,8 +81,8 @@ const MyProfile = () => {
     return (
         <div className='grid sm:grid-cols-1 lg:grid-cols-2'>
             <div className='text-center mt-16 bg-slate-100 shadow-lg rounded-lg'>
-                <div class="avatar mt-8">
-                    <div class="w-40 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2 my-5">
+                <div className="avatar mt-8">
+                    <div className="w-40 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2 my-5">
                         <img src={displayUser.img} alt='' />
                     </div>
                 </div>

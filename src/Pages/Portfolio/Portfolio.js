@@ -5,8 +5,8 @@ const Portfolio = () => {
     return (
         <div className='w-4/6 mx-auto text-center'>
             <h2 className='text-2xl text-primary my-5'>My portfolio</h2>
-            <div class="avatar">
-                <div class="w-40 rounded-full">
+            <div className="avatar">
+                <div className="w-40 rounded-full">
                     <img src={Myimg} alt='' />
                 </div>
             </div>
