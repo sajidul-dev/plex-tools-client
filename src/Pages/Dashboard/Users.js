@@ -1,10 +1,11 @@
-import React, { useEffect, useState } from 'react';
-import toast from 'react-hot-toast';
+import React, { useState } from 'react';
 import { useQuery } from 'react-query';
 import Loading from '../Shared/Loading';
+import DeleteModal from './DeleteModal';
+import UserRow from './UserRow';
 
 const Users = () => {
-
+    const [user, setUser] = useState(null)
 
     const { data: users, isLoading, refetch } = useQuery('alltools', () => fetch('http://localhost:5000/alluser', {
         method: 'GET',
@@ -16,25 +17,7 @@ const Users = () => {
         return <Loading />
     }
 
-    const makeAdmin = (email) => {
-        fetch(`https://mighty-island-89854.herokuapp.com/user/admin/${email}`, {
-            method: 'PUT',
-            headers: {
-                authorization: `Bearer ${localStorage.getItem('accessToken')}`
-            }
-        }).then(res => {
-            if (res.status === 403) {
-                toast.error('Failed to make an admin')
-            }
-            return res.json()
-        })
-            .then(data => {
-                if (data.modifiedCount > 0) {
-                    refetch()
-                    toast.success(`Successfully made an admin`)
-                }
-            })
-    }
+
 
     return (
         <div>
@@ -52,18 +35,20 @@ const Users = () => {
                         </tr>
                     </thead>
                     <tbody>
-                        {users.map((user, index) => <tr key={user._id}>
-                            <th>{index + 1}</th>
-                            <td>{user.name}</td>
-                            <td>{user.email}</td>
-                            <td>{user.role !== 'admin' && <button onClick={() => makeAdmin(user.email)} className='btn btn-xs btn-primary'>Make Admin</button>}</td>
-                            <td><button className='btn btn-xs btn-error'>Delete</button></td>
-                        </tr>)}
-
+                        {
+                            users.map((user, index) => <UserRow key={user._id} user={user} index={index} refetch={refetch} setUser={setUser}></UserRow>)
+                        }
 
                     </tbody>
                 </table>
             </div>
+            {
+                user && <DeleteModal
+                    setUser={setUser}
+                    user={user}
+                    refetch={refetch}
+                ></DeleteModal>
+            }
         </div >
     );
 };
