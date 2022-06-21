@@ -24,7 +24,7 @@ const Reviews = () => {
     return (
         <div className=''>
             <p className='my-8 text-3xl text-center text-primary'>What out client says-</p>
-            <div className='grid lg:grid-cols-3 px-12 gap-12'>
+            <div data-aos="zoom-in" className='grid lg:grid-cols-3 px-12 gap-12'>
                 {
                     result.slice(-result.length).map(singleReview => <Review key={singleReview._id}
                         singleReview={singleReview}

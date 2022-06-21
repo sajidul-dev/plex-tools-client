@@ -5,7 +5,7 @@ import './Review.css'
 const Review = ({ singleReview }) => {
     const { review, img, rating, name } = singleReview
     return (
-        <div className='review-section w-4/6 mx-auto'>
+        <div data-aos="zoom-in" className='review-section w-4/6 mx-auto'>
             <div className=''>
                 <img className="mask mask-circle w-1/5" src={img ? img : 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQD116U9ZCk8bEaanCeB5rSCC2uqY5Ka_2_EA&usqp=CAU'} alt='' />
                 <div className='ms-3 mt-2'>

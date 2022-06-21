@@ -61,6 +61,9 @@ function App() {
         <Route path='*' element={<Notfound />}></Route>
       </Routes>
       <Toaster />
+      <script>
+        AOS.init();
+      </script>
     </div>
   );
 }
