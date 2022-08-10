@@ -1,5 +1,9 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+
+AOS.init();
 
 const Tool = ({ tool }) => {
     const { img, name, description, minimumOrder, quantity, _id, price } = tool
@@ -10,7 +14,9 @@ const Tool = ({ tool }) => {
     }
 
     return (
-        <div className="card lg:card-side bg-base-100 shadow-xl">
+        <div data-aos="flip-left"
+            data-aos-easing="ease-out-cubic"
+            data-aos-duration="2000" className="card lg:card-side bg-base-100 shadow-xl">
             <figure><img src={img} alt="Album" /></figure>
             <div className="card-body">
                 <h2 className="card-title text-primary">{name}</h2>

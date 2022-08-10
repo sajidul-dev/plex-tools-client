@@ -23,10 +23,11 @@ import ManageProducts from './Pages/Dashboard/ManageProducts';
 import Blogs from './Pages/Blogs/Blogs';
 import About from './Pages/About/About';
 import Payment from './Pages/Dashboard/Payment';
+import UpdateProduct from './Pages/Dashboard/UpdateProduct';
 
 function App() {
   return (
-    <div className='font-[roboto]'>
+    <div className='font-[poppin]'>
       <Navbar></Navbar>
       <Routes>
         <Route path='/' element={<Home />}></Route>
@@ -57,7 +58,7 @@ function App() {
           <Route path='addproduct' element={<RequireAdmin><AddAProduct /></RequireAdmin>}></Route>
 
         </Route>
-
+        <Route path='/updateProduct/:id' element={<RequireAdmin><UpdateProduct /></RequireAdmin>}></Route>
         <Route path='*' element={<Notfound />}></Route>
       </Routes>
       <Toaster />

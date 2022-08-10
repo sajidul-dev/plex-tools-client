@@ -24,7 +24,6 @@ const AddAProduct = () => {
         })
             .then(res => res.json())
             .then(result => {
-                console.log(result);
                 if (result.success) {
                     const img = result.data.url
                     const updatedUser = {
@@ -36,7 +35,6 @@ const AddAProduct = () => {
                         description
                     }
                     // send to database
-                    console.log(updatedUser);
                     fetch('https://hidden-ravine-83246.herokuapp.com/addproduct', {
                         method: "POST",
                         headers: {

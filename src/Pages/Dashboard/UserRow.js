@@ -35,7 +35,7 @@ const UserRow = ({ user, index, refetch, setUser }) => {
                     onClick={() => setUser(user)}
                 >Delete</label></td>
 
-            </tr>)
+            </tr>
         </>
     );
 };

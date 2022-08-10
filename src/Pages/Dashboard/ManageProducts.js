@@ -1,9 +1,12 @@
 import React from 'react';
 import toast from 'react-hot-toast';
+import { useNavigate } from 'react-router-dom';
 import useTools from '../../hooks/useTools';
 import Loading from '../Shared/Loading';
 
 const ManageProducts = () => {
+    const navigate = useNavigate()
+
     const [tools, isLoading, refetch] = useTools()
     if (isLoading) {
         return <Loading />
@@ -27,8 +30,13 @@ const ManageProducts = () => {
                     console.log(data);
                 })
         }
+    }
+
+    const handleUpdate = (id) => {
+        navigate(`/updateProduct/${id}`)
 
     }
+
     return (
         <div>
             <div className="overflow-x-auto">
@@ -38,6 +46,7 @@ const ManageProducts = () => {
                             <th></th>
                             <th>Image</th>
                             <th>Name</th>
+                            <th>Price/ <span className='text-xs'>unit</span></th>
                             <th>Quantity</th>
                             <th>Status</th>
                         </tr>
@@ -53,8 +62,12 @@ const ManageProducts = () => {
                                     </div>
                                 </div></td>
                                 <td>{tool.name}</td>
+                                <td>$ {tool.price}</td>
                                 <td>{tool.quantity}</td>
-                                <td><button onClick={() => handleDelete(tool._id)} className='btn btn-xs btn-error'>Delete</button></td>
+                                <td><>
+                                    <button onClick={() => handleUpdate(tool._id)} className='btn btn-xs btn-primary mr-3'>Update</button>
+                                    <button onClick={() => handleDelete(tool._id)} className='btn btn-xs btn-error'>Delete</button>
+                                </></td>
                             </tr>)
                         }
 
