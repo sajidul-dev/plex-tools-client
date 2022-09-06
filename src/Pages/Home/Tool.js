@@ -23,7 +23,7 @@ const Tool = ({ tool }) => {
                 <p><span className='font-bold'>Price:</span> {price} /unit</p>
                 <p><span className='font-bold'>Description:</span> {description.slice(0, 50)}...</p>
                 <p><span className='font-bold'>Quantity:</span> {quantity} unit</p>
-                <div className="card-actions justify-center">
+                <div className="card-actions justify-start">
                     <button onClick={navigateToPurchase} className="btn btn-primary">Purchase</button>
                 </div>
             </div>
