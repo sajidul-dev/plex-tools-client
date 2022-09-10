@@ -17,7 +17,7 @@ const Purchase = () => {
     const [price, setPrice] = useState(0)
     const [quantityError, setQuantityError] = useState('')
 
-    const { data: tool, isLoading, refetch } = useQuery('tool', () => fetch(`https://plex-tools-server.vercel.app/tool/${id}`, {
+    const { data: tool, isLoading, refetch } = useQuery('tool', () => fetch(`https://hidden-ravine-83246.herokuapp.com/tool/${id}`, {
         method: "GET",
         headers: {
             "authorization": `Bearer ${localStorage.getItem('accessToken')}`,
@@ -60,7 +60,7 @@ const Purchase = () => {
         }
         else {
             setQuantityError('')
-            fetch('https://plex-tools-server.vercel.app/order', {
+            fetch('https://hidden-ravine-83246.herokuapp.com/order', {
                 method: "PUT",
                 headers: {
                     "authorization": `Bearer ${localStorage.getItem('accessToken')}`,

@@ -17,7 +17,7 @@ const CheckoutForm = ({ tool }) => {
 
 
     useEffect(() => {
-        fetch('https://plex-tools-server.vercel.app/create-payment-intent', {
+        fetch('https://hidden-ravine-83246.herokuapp.com/create-payment-intent', {
             method: "POST",
             headers: {
                 "content-type": "application/json",
@@ -88,7 +88,7 @@ const CheckoutForm = ({ tool }) => {
                 toolId: _id,
                 transactionId: paymentIntent.id
             }
-            fetch(`https://plex-tools-server.vercel.app/order/${_id}`, {
+            fetch(`https://hidden-ravine-83246.herokuapp.com/order/${_id}`, {
                 method: "PATCH",
                 headers: {
                     "content-type": "application/json",

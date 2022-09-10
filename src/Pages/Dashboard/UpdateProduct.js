@@ -37,7 +37,7 @@ const UpdateProduct = () => {
         }
         console.log(updatedUser);
         // // send to database
-        // fetch('https://plex-tools-server.vercel.app/addproduct', {
+        // fetch('https://hidden-ravine-83246.herokuapp.com/addproduct', {
         //     method: "POST",
         //     headers: {
         //         'content-type': 'application/json',

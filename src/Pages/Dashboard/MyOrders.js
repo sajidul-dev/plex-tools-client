@@ -13,7 +13,7 @@ const MyOrders = () => {
 
     useEffect(() => {
 
-        fetch(`https://plex-tools-server.vercel.app/myorder?email=${user?.email}`, {
+        fetch(`https://hidden-ravine-83246.herokuapp.com/myorder?email=${user?.email}`, {
             method: "GET",
             headers: {
                 "authorization": `Bearer ${localStorage.getItem('accessToken')}`,

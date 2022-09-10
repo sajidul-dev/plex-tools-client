@@ -7,7 +7,7 @@ const useToken = user => {
         const email = user?.user?.email
         const currentUser = { email: email }
         if (email) {
-            fetch(`https://plex-tools-server.vercel.app/user/${email}`, {
+            fetch(`https://hidden-ravine-83246.herokuapp.com/user/${email}`, {
                 method: 'PUT',
                 headers: {
                     'content-type': "application/json"

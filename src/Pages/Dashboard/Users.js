@@ -7,7 +7,7 @@ import UserRow from './UserRow';
 const Users = () => {
     const [user, setUser] = useState(null)
 
-    const { data: users, isLoading, refetch } = useQuery('alltools', () => fetch('https://plex-tools-server.vercel.app/alluser', {
+    const { data: users, isLoading, refetch } = useQuery('alltools', () => fetch('https://hidden-ravine-83246.herokuapp.com/alluser', {
         method: 'GET',
         headers: {
             "authorization": `Bearer ${localStorage.getItem('accessToken')}`,

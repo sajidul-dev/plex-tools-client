@@ -5,7 +5,7 @@ import Review from './Review';
 
 
 const Reviews = () => {
-    const { data: reviews, isLoading } = useQuery('reviews', () => fetch('https://plex-tools-server.vercel.app/reviews').then(res => res.json()))
+    const { data: reviews, isLoading } = useQuery('reviews', () => fetch('https://hidden-ravine-83246.herokuapp.com/reviews').then(res => res.json()))
 
     if (isLoading) {
         return <Loading />
