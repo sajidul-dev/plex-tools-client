@@ -15,7 +15,7 @@ const ManageProducts = () => {
     const handleDelete = (id) => {
         const confirm = window.confirm("Are you sure?")
         if (confirm) {
-            const url = `https://hidden-ravine-83246.herokuapp.com/deletetool/${id}`
+            const url = `https://plex-tools-server.vercel.app/deletetool/${id}`
             fetch(url, {
                 method: "DELETE",
                 headers: {

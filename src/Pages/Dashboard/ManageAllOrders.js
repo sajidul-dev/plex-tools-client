@@ -4,7 +4,7 @@ import { useQuery } from 'react-query';
 import Loading from '../Shared/Loading';
 
 const ManageAllOrders = () => {
-    const { data: allOrders, isLoading, refetch } = useQuery('allorders', () => fetch('https://hidden-ravine-83246.herokuapp.com/allorders', {
+    const { data: allOrders, isLoading, refetch } = useQuery('allorders', () => fetch('https://plex-tools-server.vercel.app/allorders', {
         method: 'GET',
         headers: {
             "authorization": `Bearer ${localStorage.getItem('accessToken')}`,
@@ -16,7 +16,7 @@ const ManageAllOrders = () => {
     }
 
     const handleShift = (id) => {
-        const url = `https://hidden-ravine-83246.herokuapp.com/shifted/${id}`
+        const url = `https://plex-tools-server.vercel.app/shifted/${id}`
         fetch(url, {
             method: 'PATCH',
             headers: {

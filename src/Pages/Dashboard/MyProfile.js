@@ -43,7 +43,7 @@ const MyProfile = () => {
                     }
                     // send to database
 
-                    fetch(`https://hidden-ravine-83246.herokuapp.com/updateduser?email=${user.email}`, {
+                    fetch(`https://plex-tools-server.vercel.app/updateduser?email=${user.email}`, {
                         method: "PUT",
                         headers: {
                             'content-type': 'application/json',
@@ -68,7 +68,7 @@ const MyProfile = () => {
     }
 
 
-    const { data: displayUser, isLoading } = useQuery('user', () => fetch(`https://hidden-ravine-83246.herokuapp.com/user?email=${user.email}`, {
+    const { data: displayUser, isLoading } = useQuery('user', () => fetch(`https://plex-tools-server.vercel.app/user?email=${user.email}`, {
         method: "GET",
         headers: {
             "authorization": `Bearer ${localStorage.getItem('accessToken')}`,

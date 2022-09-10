@@ -21,7 +21,7 @@ const AddReview = () => {
             email: user.email,
             name: user.displayName
         }
-        fetch('https://hidden-ravine-83246.herokuapp.com/addreview', {
+        fetch('https://plex-tools-server.vercel.app/addreview', {
             method: "PUT",
             headers: {
                 'content-type': 'application/json'

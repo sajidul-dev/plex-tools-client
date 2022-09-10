@@ -10,7 +10,7 @@ const stripePromise = loadStripe('pk_test_51L2Mk9AhkEtg26q41M1mbPjisAIwUnQs18bQG
 
 const Payment = () => {
     const { id } = useParams()
-    const url = `https://hidden-ravine-83246.herokuapp.com/order/${id}`
+    const url = `https://plex-tools-server.vercel.app/order/${id}`
     const { data: tool, isLoading } = useQuery(['order', id], () => fetch(url, {
         method: "GET",
         headers: {
