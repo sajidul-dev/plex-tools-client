@@ -4,7 +4,7 @@ import Loading from '../Shared/Loading';
 import Tool from './Tool';
 
 const Tools = () => {
-    const { data: tools, isLoading } = useQuery('tools', () => fetch('https://hidden-ravine-83246.herokuapp.com/tools').then(res => res.json()))
+    const { data: tools, isLoading } = useQuery('tools', () => fetch('https://plex-tool-server.onrender.com/tools').then(res => res.json()))
     if (isLoading) {
         return <Loading />
     }

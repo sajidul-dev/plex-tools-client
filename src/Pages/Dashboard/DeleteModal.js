@@ -4,7 +4,7 @@ const DeleteModal = ({ user, setUser, refetch }) => {
 
     const confirmDelete = () => {
 
-        fetch(`https://hidden-ravine-83246.herokuapp.com/deleteuser/${user.email}`, {
+        fetch(`https://plex-tool-server.onrender.com/deleteuser/${user.email}`, {
             method: "Delete",
             headers: {
                 "authorization": `Bearer ${localStorage.getItem('accessToken')}`,

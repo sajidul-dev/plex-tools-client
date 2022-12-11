@@ -17,7 +17,7 @@ const CheckoutForm = ({ tool }) => {
 
 
     useEffect(() => {
-        fetch('https://hidden-ravine-83246.herokuapp.com/create-payment-intent', {
+        fetch('https://plex-tool-server.onrender.com/create-payment-intent', {
             method: "POST",
             headers: {
                 "content-type": "application/json",
@@ -82,16 +82,17 @@ const CheckoutForm = ({ tool }) => {
             setTransactionId(paymentIntent.id)
             setSuccess("Congrats! Your payment is completed")
 
-
             // update payment to db
             const payment = {
                 toolId: _id,
                 transactionId: paymentIntent.id
             }
-            fetch(`https://hidden-ravine-83246.herokuapp.com/order/${_id}`, {
-                method: "PATCH",
+            console.log('inside payment', payment)
+
+            fetch(`https://plex-tool-server.onrender.com/order/${_id}`, {
+                method: "PUT",
                 headers: {
-                    "content-type": "application/json",
+                    "Content-Type": "application/json",
                     "authorization": `Bearer ${localStorage.getItem('accessToken')}`
                 },
                 body: JSON.stringify(payment)

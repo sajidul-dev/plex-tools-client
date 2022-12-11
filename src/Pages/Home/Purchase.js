@@ -17,7 +17,7 @@ const Purchase = () => {
     const [price, setPrice] = useState(0)
     const [quantityError, setQuantityError] = useState('')
 
-    const { data: tool, isLoading, refetch } = useQuery('tool', () => fetch(`https://hidden-ravine-83246.herokuapp.com/tool/${id}`, {
+    const { data: tool, isLoading, refetch } = useQuery('tool', () => fetch(`https://plex-tool-server.onrender.com/tool/${id}`, {
         method: "GET",
         headers: {
             "authorization": `Bearer ${localStorage.getItem('accessToken')}`,
@@ -60,7 +60,7 @@ const Purchase = () => {
         }
         else {
             setQuantityError('')
-            fetch('https://hidden-ravine-83246.herokuapp.com/order', {
+            fetch('https://plex-tool-server.onrender.com/order', {
                 method: "PUT",
                 headers: {
                     "authorization": `Bearer ${localStorage.getItem('accessToken')}`,
@@ -74,7 +74,8 @@ const Purchase = () => {
                 })
                 .then(data => {
                     refetch()
-                    toast.success("Pursched confirm")
+                    console.log(data);
+                    toast.success("Purchase confirm")
                 })
 
         }

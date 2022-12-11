@@ -35,7 +35,7 @@ const AddAProduct = () => {
                         description
                     }
                     // send to database
-                    fetch('https://hidden-ravine-83246.herokuapp.com/addproduct', {
+                    fetch('https://plex-tool-server.onrender.com/addproduct', {
                         method: "POST",
                         headers: {
                             'content-type': 'application/json',

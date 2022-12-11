@@ -10,10 +10,9 @@ const MyOrders = () => {
     const [tools, setTools] = useState([])
     const navigate = useNavigate()
 
-
     useEffect(() => {
 
-        fetch(`https://hidden-ravine-83246.herokuapp.com/myorder?email=${user?.email}`, {
+        fetch(`https://plex-tool-server.onrender.com/myorder?email=${user?.email}`, {
             method: "GET",
             headers: {
                 "authorization": `Bearer ${localStorage.getItem('accessToken')}`,
