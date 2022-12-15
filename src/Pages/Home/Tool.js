@@ -14,9 +14,8 @@ const Tool = ({ tool }) => {
     }
 
     return (
-        <div data-aos="flip-left"
-            data-aos-easing="ease-out-cubic"
-            data-aos-duration="2000" className="card lg:card-side bg-base-100 shadow-xl">
+        <div data-aos="fade-up"
+            data-aos-anchor-placement="top-bottom" className="card lg:card-side bg-base-100 shadow-xl">
             <figure><img src={img} alt="Album" /></figure>
             <div className="card-body">
                 <h2 className="card-title text-primary">{name}</h2>

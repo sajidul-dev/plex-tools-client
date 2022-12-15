@@ -8,7 +8,7 @@ const Dashboard = () => {
     const [user] = useAuthState(auth)
     const [admin] = useAdmin(user)
     return (
-        <div className="drawer drawer-mobile">
+        <div className="drawer drawer-mobile bg-[url(https://i.ibb.co/v119z4J/scattered-forcefields-1.png)]">
             <input id="dashboard-sidebar" type="checkbox" className="drawer-toggle" />
             <div className="drawer-content ">
                 {/* <!-- Page content here --> */}

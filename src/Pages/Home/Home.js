@@ -9,7 +9,7 @@ import Tools from './Tools';
 
 const Home = () => {
     return (
-        <div>
+        <div className='bg-[url(https://i.ibb.co/v119z4J/scattered-forcefields-1.png)]'>
             <Banner />
             <Tools />
             <Reviews />
